@@ -1,58 +1,76 @@
 "use client";
 
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 
+// ---------- ZX9 SPEAKER ----------
 function ZX9Speaker() {
   return (
-    <section className="max-w-[1110px] mx-auto px-6 md:px-10 lg:px-0 mb-8 md:mb-12 lg:mb-12">
-      <div className="bg-[#D87D4A] rounded-lg overflow-hidden relative">
+    <section className="max-w-[1110px] mx-auto px-6 md:px-10 lg:px-0 mb-[50px] md:mb-[30px]">
+      <div className="relative bg-[#D87D4A] rounded-lg overflow-hidden flex flex-col md:flex-row items-center justify-between px-6 md:px-12 lg:px-[95px] py-[55px] md:py-[95px] text-center md:text-left">
         {/* Decorative Circles */}
-        <div className="absolute top-0 left-1/2 md:left-1/4 -translate-x-1/2 md:-translate-x-0 -translate-y-1/2 w-[558px] h-[558px] border border-white/10 rounded-full hidden md:block"></div>
-        <div className="absolute top-0 left-1/2 md:left-1/4 -translate-x-1/2 md:-translate-x-0 -translate-y-1/2 w-[672px] h-[672px] border border-white/10 rounded-full hidden md:block"></div>
-        <div className="absolute top-0 left-1/2 md:left-1/4 -translate-x-1/2 md:-translate-x-0 -translate-y-1/2 w-[786px] h-[786px] border border-white/10 rounded-full hidden md:block"></div>
+        <div className="absolute top-[30px] md:right-[50%] ">
+           <Image
+            src="/assets/home/desktop/pattern-circles.svg"
+            alt="ZX9 Speaker"
+            width={410}
+            height={493}
+            priority
+            className="w-full h-auto object-contain"
+          />
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-0 items-center py-14 md:py-16 lg:py-24 px-6 md:px-12 lg:px-24">
-          {/* Image */}
-          <div className="flex justify-center relative z-10">
-            <div className="w-[172px] h-[207px] md:w-[198px] md:h-[237px] lg:w-[410px] lg:h-[493px] bg-gray-300/20 rounded-lg flex items-center justify-center">
-              <span className="text-white/30 text-sm">ZX9 Speaker Image</span>
-            </div>
-          </div>
+        <div className="relative z-10 flex justify-center mb-10 md:mb-0">
+          <Image
+            src="/assets/home/desktop/image-speaker-zx9.png"
+            alt="ZX9 Speaker"
+            width={410}
+            height={493}
+            className="w-[172px] md:w-[220px] lg:w-[410px] h-auto object-contain drop-shadow-xl"
+            priority
+          />
+        </div>
 
-          {/* Content */}
-          <div className="text-white text-center md:text-left relative z-10 max-w-[349px] mx-auto md:mx-0">
-            <h2 className="text-[36px] md:text-[56px] leading-[40px] md:leading-[58px] font-bold tracking-[1.29px] md:tracking-[2px] mb-6 uppercase">
-              ZX9<br />SPEAKER
-            </h2>
-            <p className="text-white/75 text-[15px] leading-[25px] mb-6 md:mb-10">
-              Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
-            </p>
-            <Link
-              href="/product/zx9-speaker"
-              className="inline-block bg-[#000000] hover:bg-[#4C4C4C] text-white text-[13px] font-bold tracking-[1px] px-[30px] py-[15px] transition-colors uppercase"
-            >
-              SEE PRODUCT
-            </Link>
-          </div>
+        
+        <div className="relative z-10 max-w-[349px] mx-auto md:mx-0 text-white">
+          <h2 className="text-[36px] md:text-[56px] leading-[40px] md:leading-[58px] font-bold tracking-[1.3px] md:tracking-[2px] mb-6 uppercase">
+            ZX9 <br /> SPEAKER
+          </h2>
+          <p className="text-white/80 text-[15px] leading-[25px] mb-8 md:mb-10">
+            Upgrade to premium speakers that are phenomenally built to deliver
+            truly remarkable sound.
+          </p>
+          <Link
+            href="/product/zx9-speaker"
+            className="inline-block bg-black hover:bg-[#4C4C4C] text-white text-[13px] font-bold tracking-[1px] px-[30px] py-[15px] transition-colors uppercase"
+          >
+            SEE PRODUCT
+          </Link>
         </div>
       </div>
     </section>
   );
 }
 
+
 function ZX7Speaker() {
   return (
-    <section className="max-w-[1110px] mx-auto px-6 md:px-10 lg:px-0 mb-8 md:mb-12 lg:mb-12">
-      <div className="bg-gray-200 rounded-lg overflow-hidden relative h-[320px] flex items-center">
-        {/* Background Image Placeholder */}
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-300 to-gray-200 opacity-50">
-          <span className="sr-only">ZX7 Speaker Background Image</span>
-        </div>
+    <section className="max-w-[1110px] mx-auto px-6 md:px-10 lg:px-0 mb-[50px] md:mb-[30px]">
+      <div className="relative rounded-lg overflow-hidden flex items-center h-[320px] bg-[#F1F1F1]">
+        {/* Background Image */}
+        <Image
+          src="/assets/home/desktop/image-speaker-zx7.jpg"
+          alt="ZX7 Speaker"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/10"></div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 md:px-12 lg:px-24">
-          <h2 className="text-[28px] font-bold tracking-[2px] mb-8 uppercase">
+        <div className="relative z-10 px-6 md:px-12 lg:px-[95px]">
+          <h2 className="text-[28px] font-bold tracking-[2px] mb-8 uppercase text-black">
             ZX7 SPEAKER
           </h2>
           <Link
@@ -67,18 +85,25 @@ function ZX7Speaker() {
   );
 }
 
+
 function YX1Earphones() {
   return (
-    <section className="max-w-[1110px] mx-auto px-6 md:px-10 lg:px-0 mb-[120px] md:mb-[96px] lg:mb-[200px]">
+    <section className="max-w-[1110px] mx-auto px-6 md:px-10 lg:px-0 mb-[50px] md:mb-[30px]">
       <div className="grid md:grid-cols-2 gap-6 md:gap-[11px] lg:gap-[30px]">
         {/* Image */}
-        <div className="bg-gray-300 rounded-lg h-[200px] md:h-[320px] flex items-center justify-center overflow-hidden">
-          <span className="text-gray-500">YX1 Earphones Image</span>
+        <div className="relative h-[200px] md:h-[320px] rounded-lg overflow-hidden">
+          <Image
+            src="/assets/home/desktop/image-earphones-yx1.jpg"
+            alt="YX1 Earphones"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
 
         {/* Content */}
-        <div className="bg-[#F1F1F1] rounded-lg h-[200px] md:h-[320px] flex flex-col justify-center px-6 md:px-12 lg:px-24">
-          <h2 className="text-[28px] font-bold tracking-[2px] mb-8 uppercase">
+        <div className="bg-[#F1F1F1] rounded-lg h-[200px] md:h-[320px] flex flex-col justify-center px-6 md:px-12 lg:px-[95px]">
+          <h2 className="text-[28px] font-bold tracking-[2px] mb-8 uppercase text-black">
             YX1 EARPHONES
           </h2>
           <Link

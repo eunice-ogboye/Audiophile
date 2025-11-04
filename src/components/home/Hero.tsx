@@ -3,6 +3,7 @@ import Hero from '../layout/Header';
 import CategoryCards from './CategoryCards';
 import FeaturedProducts from './FeaturedProducts';
 import Footer from '../layout/Footer';
+import AudioGearSectionProps from './AudioGearSection';
 
 export default function Landing() {
   return (
@@ -11,6 +12,7 @@ export default function Landing() {
       <Hero />
       <CategoryCards />
        <FeaturedProducts />
+      <AudioGearSectionProps />
       <Footer />
     </div>
   );

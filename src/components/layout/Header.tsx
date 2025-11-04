@@ -1,19 +1,47 @@
-import React, { useState } from 'react';
+"use client";
+
+import React from 'react';
 import Link from 'next/link';
-import { ShoppingCart, Menu, X } from 'lucide-react';
-import { Navbar } from './Navigation';
+import Image from 'next/image';
 
+interface HeroProps {
+  className?: string;
+}
 
-
-function Hero() {
+function Hero({ className = '' }: HeroProps) {
   return (
-    <section className="bg-[#191919] relative overflow-hidden">
-      <div className="max-w-[1110px] mx-auto px-6 md:px-10 lg:px-0">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-0 items-center min-h-[calc(100vh-96px)] md:min-h-[600px] lg:min-h-[calc(100vh-96px)] py-12 md:py-16 lg:py-0">
+    <section className={`bg-[#191919] relative overflow-hidden ${className}`}>
+   
+   <div>
+      <Image
+      src="/assets/home/desktop/image-hero.jpg"
+      alt="Hero background"
+      fill
+      className="object-cover hidden md:block"
+    />
+    <Image
+      src="/assets/home/tablet/image-header.jpg"
+      alt="Hero background"
+      fill
+      className="object-cover hidden sm:block md:hidden"
+    />
+    <Image
+      src="/assets/home/mobile/image-header.jpg"
+      alt="Hero background"
+      fill
+      className="object-cover sm:hidden"
+    />
+
+</div>
+
+
+
+      <div className="max-w-[1110px] mx-auto px-6 md:px-10 lg:px-0 relative">
+        <div className="grid lg:grid-cols-2 gap-0 items-center min-h-[calc(100vh-96px)] md:min-h-[600px] lg:min-h-[650px] py-28 md:py-32 lg:py-0">
           
           {/* Text Content */}
-          <div className="relative z-10 text-center lg:text-left max-w-[398px] mx-auto lg:mx-0 order-2 lg:order-1">
-            <p className="text-white/40 text-[14px] tracking-[10px] font-normal mb-4 md:mb-6 uppercase">
+          <div className="relative z-10 text-center lg:text-left max-w-[398px] mx-auto lg:mx-0">
+            <p className="text-white/40 text-[14px] tracking-[10px] font-normal mb-6 uppercase">
               NEW PRODUCT
             </p>
             
@@ -25,39 +53,42 @@ function Hero() {
               Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
             </p>
             
-            <a 
+            <Link 
               href="/product/xx99-mark-two-headphones"
               className="inline-block bg-[#D87D4A] hover:bg-[#FBAF85] text-white text-[13px] font-bold tracking-[1px] px-[30px] py-[15px] transition-colors uppercase"
             >
               SEE PRODUCT
-            </a>
+            </Link>
           </div>
 
-          {/* Image - Responsive positioning */}
-          <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end">
-            {/* Mobile & Tablet - Centered */}
-            <div className="w-full max-w-[320px] md:max-w-[450px] lg:max-w-none aspect-square lg:aspect-auto lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:w-[600px] lg:h-[600px] flex items-center justify-center">
-              {/* Placeholder - Replace with actual image */}
-                  <img src="/assets/home/desktop/image-hero.jpg" alt="" />
-            </div>
-          </div>
+          
         </div>
       </div>
 
-      {/* Optional: Decorative gradient overlay for better text readability on mobile */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#191919] via-transparent to-transparent lg:hidden pointer-events-none"></div>
+      {/* Mobile gradient overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#191919] via-[#191919]/60 to-transparent lg:hidden pointer-events-none z-[1]"></div>
     </section>
   );
 }
 
-// Main Header Component combining Navbar and Hero
-export default function Header() {
+
+interface HeaderProps {
+  showHero?: boolean;
+  className?: string;
+}
+
+export default function Header({ showHero = true, className = '' }: HeaderProps) {
+  if (!showHero) {
+    return null;
+  }
+
   return (
-    <header>
+    <header className={className}>
       <Hero />
     </header>
   );
 }
 
-// Export individual components if needed elsewhere
+
 export { Hero };
+export type { HeroProps, HeaderProps };
